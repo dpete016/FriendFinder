@@ -15,7 +15,7 @@ var friends = [
             "4",
             "1"
         ]
-    }
+    },
   
     {
         name:"Josiah",
@@ -32,7 +32,7 @@ var friends = [
             "4",
             "1"
         ]
-    }
+    },
     
 
     {
@@ -50,7 +50,7 @@ var friends = [
             "4",
             "5"
         ]
-    }
+    },
 
 
     {
@@ -68,7 +68,7 @@ var friends = [
             "4",
             "1"
         ]
-    }
+    },
 
 
     {
@@ -86,7 +86,7 @@ var friends = [
             "4",
             "5"
         ]
-    }
+    },
 
     {
         name:"Dan",
@@ -103,7 +103,7 @@ var friends = [
             "4",
             "1"
         ]
-    }
+    },
 
     {
         name:"Jerome",
@@ -120,7 +120,7 @@ var friends = [
             "5",
             "4"
         ]
-    }
+    },
 
     {
         name:"Favaro",
@@ -137,7 +137,7 @@ var friends = [
             "3",
             "1"
         ]
-    }
+    },
 
     {
         name:"Derrick",
@@ -154,7 +154,7 @@ var friends = [
             "4",
             "5"
         ]
-    }
+    },
 
     {
         name:"Rock",
@@ -171,7 +171,7 @@ var friends = [
             "2",
             "3"
         ]
-    }
+    },
 
 ];
 
