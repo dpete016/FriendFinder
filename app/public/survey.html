@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>FriendFinder</title>
 
-    <!--CSS and Javascript-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!--CSS and Javascript-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -169,26 +169,24 @@
         </footer>
 
     </div>
-
-    <div id="resultsModal" classs="modal fade" role="dialog">
-      <div class="modal-content">
-            <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title"><strong>Best Match</strong></h2>
-            </div>
-        
+       
+   <!-- Modal -->
+   <div id="results-modal" class="modal fade" role="dialog">
+       <div class="modal-content">
+          <!-- Modal Content -->        
+           <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h2 class="modal-title"><strong>Best Match</strong></h2>
+           </div>
            <div class="modal-body">
-               <h2 id="matchName"></h2>
-               <img id="matchImg" src="" alt="">
-            </div>
-                
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-      </div>  
- 
-
-    </div>
+               <h2 id="match-name"></h2>
+               <img id="match-img" src="" alt="">
+           </div>
+           <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+       </div>
+   </div>
     
     
     <script type ="text/javascript">
@@ -196,13 +194,14 @@
       var config = {
           ".chosen-select": {},
           ".chosen-select-deselect": { allow_single_deselect: true },
-          ".chosen-select-no-single": { disable_search_threshold:10 },
+          ".chosen-select-no-single": { disable_search_threshold: 10 },
           ".chosen-select-no-results": { no_results_text: "Opps, nothing found!" },
           ".chosen-select-width": { width: "95%" }
       };
 
 
-      $("#submit").on("click", function() {
+     $("#submit").on("click", function(event) {
+        event.preventDefault();
 
         function validateForm() {
             var isValid = true;
@@ -240,22 +239,22 @@
                 ]
             };
 
-            var currentURL = window.location.origin;
+            
 
-            $.post(currentURL + "/api/friends", userData, function(data) {
-                $("#matchName").text(data.name);
-                $("#matchImg").attr("src", data.photo);
+            $.post("/api/friends", userData, function(data) {
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
 
-                $("#resultsModal").modal("toogle");
-             alert(working);
+                $("#results-modal").modal("toggle");
+             
             });
-        }
-        else {
+       
+        } else {
             alert("Please fill out all fields before submitting!");
         }
 
-        return False
-        });
+        
+     });
                 
     </script>
 
