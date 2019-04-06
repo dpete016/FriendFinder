@@ -18,7 +18,7 @@ module.exports = function(app) {
         var userData = req.body;
         var userScores = userData.scores;
 
-        console.log(userScores);
+        console.log("User Score" + userScores);
 
 
         var totalDifference = 0;
